@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie APP</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><span>MOVIE</span>X</a>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">home</a></li>
+            <li><a href="#gallery">gallery</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#movies">movies</a></li>
+            <!-- <li><a href="#product">product</a></li> -->
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>amazing  movies Here..</h3>
+        <h1>welcome to Movies Lover</h1>
+        
+        <a href="#" class="btn">get started</a>
+    </div>
+
+    <div class="image">
+        <img src="/static/images/home-bg-min.jpg" alt="">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+ <h1 class="heading"> <span>superheroes</span> gallery </h1>
+
+ <div class="box-container">
+
+    {% for g in gallary %}
+    <div class="box">
+        <img src="{{g.image.url}}" alt="">
+        <div class="info">
+            <h3>{{g.title}}</h3>
+            <p>{{g.desc}}</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+    </div>
+    {% endfor %}
+
+ </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> Movies </h1>
+
+    {% for a in about %}
+    <div class="row">
+
+        <div class="image">
+            <img src="{{a.Image.url}}" alt="">
+        </div>
+
+        <div class="content">
+            <h3>{{a.Title}}</h3>
+            <p>{{a.Desc}}</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+    </div>
+    {% endfor %}
+</section>
+
+<!-- about section ends -->
+
+<!-- movies section starts  -->
+
+<section class="movies" id="movies">
+
+    <h1 class="heading"> <span>marvel</span> movies </h1>
+
+    <div class="box-container">
+
+        {% for m in movie %}
+        <div class="box">
+            <img src="{{m.image.url}}" alt="">
+            <div class="info">
+                <h3>{{m.name}}</h3>
+                <span>{{m.story}}</span>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>{{m.desc}}</p>
+                <a href="#" class="btn">watch online</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+<!-- movies section ends -->
+
+
+<!-- footer section starts  -->
+
+<div class="footer">
+
+ <!--    <div class="share">
+        <a href="#"> <i class="fab fa-youtube"></i> youtube </a>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+    </div>
+ -->
+    <h1 class="credit"> created by <a href="#">Ajay pawar </a> </h1>
+
+</div>
+
+<!-- footer section ends -->
+
+<!-- scroll top  -->
+
+<a href="#home" class="scroll-top">
+    <img src="/static/images/scroll-img.png" alt="">
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>
